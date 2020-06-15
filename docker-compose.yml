@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+  ffmpegServer:
+    image: necromant/ffmpeg-server
+    networks:
+      - public
+    deploy:
+      mode: replicated
+      replicas: 1
+      endpoint_mode: dnsrr
+
+networks:
+  public:
+    external: true
