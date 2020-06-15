@@ -9,7 +9,13 @@ services:
       mode: replicated
       replicas: 1
       endpoint_mode: dnsrr
+    configs:
+      - ffmpeg_server
 
 networks:
   public:
+    external: true
+
+configs:
+  ffmpeg_server:
     external: true
