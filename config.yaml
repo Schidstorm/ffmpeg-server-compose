@@ -1,0 +1,2 @@
+UploadDestinationDirectory: /var/lib/ffmpeg-server/upload
+ConversionDestinationDirectory: /var/lib/ffmpeg-server/conversion

@@ -10,7 +10,12 @@ services:
       replicas: 1
       endpoint_mode: dnsrr
     configs:
-      - ffmpeg_server
+      - source: ffmpeg_server
+        target: /etc/ffmpeg-server/config
+        mode: 0444
+    volumes:
+      - /var/lib/ffmpeg-server/upload:/var/lib/ffmpeg-server/upload
+      - /media/hidrive/users/xhq6savpdkk9cruusg9a4najh/movies/:/var/lib/ffmpeg-server/conversion
 
 networks:
   public:
@@ -18,4 +23,4 @@ networks:
 
 configs:
   ffmpeg_server:
-    external: true
+    file: ./config.yaml
